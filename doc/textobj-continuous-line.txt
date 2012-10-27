@@ -1,0 +1,116 @@
+*textobj-continuous-line.txt*
+
+Copyright (C) 2012 rhysd <lin90162@yahoo.co.jp>
+
+CONTENTS					*textobj-continuous-line-contents*
+
+Interface				|textobj-continuous-line-interface|
+Key Mappings			|textobj-continuous-line-key-mappings|
+Requirements			|textobj-continuous-line-requirements|
+License					|textobj-continuous-line-license|
+
+
+==============================================================================
+INTRODUCTION					*textobj-continuous-line-introduction*
+
+*textobj-continuous-line* is a Vim plugin to provide text objects to select
+multipul lines which is continued with '\' in C,C++,sh,zsh and Vim script.
+
+Latest version:
+http://github.com/rhsd/vim-textobj-continuous-line
+
+
+==============================================================================
+KEY MAPPINGS					*textobj-continuous-line-key-mappings*
+
+NO DEFAULT MAPPINGS			*g:textobj_continuous_line_no_default_key_mappings*
+This plugin defines the following key mappings by default.	If you don't want
+the default key mappings, define
+|g:textobj_continuous_line_no_default_key_mappings| before this plugin is
+loaded (e.g. in your |vimrc|).
+
+KEY MAPPINGS IN VIM					*textobj-continuous-line-vim-key-mappings*
+
+In Vim script, '\' at the head of a line means |line-continuation|. If a
+cursor is in line-continued lines, this plugin constructs a text object
+with whole line-continued lines.
+
+<Plug>(textobj-continuous-vim-a)	*<Plug>(textobj-continuous-vim-a)*
+
+|<Plug>(textobj-continuous-vim-a)| includes the front blanks and the end
+of eol.
+
+<Plug>(textobj-continuous-vim-i)	*<Plug>(textobj-continuous-vim-i)*
+
+|<Plug>(textobj-continuous-vim-i)| doesn't includes the front blanks and
+the end of eol.
+
+This plugin defines following mappings when |filetype| is vim
+>
+		omap <buffer>av <Plug>(textobj-continuous-vim-a)
+		vmap <buffer>av <Plug>(textobj-continuous-vim-a)
+		omap <buffer>iv <Plug>(textobj-continuous-vim-i)
+		vmap <buffer>iv <Plug>(textobj-continuous-vim-i)
+<
+
+KEY MAPPINGS IN OTHERS		*textobj-continuous-line-others-key-mappings*
+
+In C PreProcessor and ShellScript, '\' at the end of a line means
+|line-continuation|. If a cursor is in line-continued lines, this plugin
+constructs a text object with whole line-continued lines.
+
+<Plug>(textobj-continuous-cpp-a)	*<Plug>(textobj-continuous-cpp-a)*
+
+|<Plug>(textobj-continuous-cpp-a)| includes the front blanks and the end
+of eol.
+
+<Plug>(textobj-continuous-cpp-i)	*<Plug>(textobj-continuous-cpp-i)*
+
+|<Plug>(textobj-continuous-cpp-i)| doesn't includes the front blanks and
+the end of eol.
+
+This plugin defines following mappings when |filetype| is c, cpp, sh
+or zsh.
+
+>
+		omap <buffer>av <Plug>(textobj-continuous-cpp-a)
+		vmap <buffer>av <Plug>(textobj-continuous-cpp-a)
+		omap <buffer>iv <Plug>(textobj-continuous-cpp-i)
+		vmap <buffer>iv <Plug>(textobj-continuous-cpp-i)
+<
+
+
+==============================================================================
+REQUIREMENTS					*textobj-continuous-line-requirements*
+
+- Vim 7.2 or later
+- |textobj-user| (vimscript#2100)
+
+
+==============================================================================
+LICENSE							*textobj-continuous-line-license*
+
+This plugin is distributed under the MIT license.
+
+Copyright (c) 2012 rhysd
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:fen:fdl=0:fdm=marker:
