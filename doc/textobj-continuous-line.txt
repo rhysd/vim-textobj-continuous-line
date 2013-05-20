@@ -14,7 +14,8 @@ License					|textobj-continuous-line-license|
 INTRODUCTION					*textobj-continuous-line-introduction*
 
 *textobj-continuous-line* is a Vim plugin to provide text objects to select
-multipul lines which is continued with '\' in C,C++,sh,zsh and Vim script.
+multipul lines which is continued with '\' in C,C++,sh,zsh,fish and Vim
+script.
 
 Latest version:
 http://github.com/rhsd/vim-textobj-continuous-line
@@ -69,8 +70,8 @@ of eol.
 |<Plug>(textobj-continuous-cpp-i)| doesn't includes the front blanks and
 the end of eol.
 
-This plugin defines following mappings when |filetype| is c, cpp, sh
-or zsh.
+This plugin defines following mappings when |filetype| is c, cpp, sh,
+zsh or fish.
 
 >
 		omap <buffer>av <Plug>(textobj-continuous-cpp-a)
