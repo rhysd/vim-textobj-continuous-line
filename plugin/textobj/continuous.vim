@@ -37,8 +37,8 @@ if ! exists('textobj_continuous_line_no_default_mappings')
 
     augroup TextobjContinuousLineDefaultMapping
         autocmd!
-        autocmd FileType vim          call <SID>define_default_vim_mapping()
-        autocmd FileType c,cpp,sh,zsh call <SID>define_default_cpp_mapping()
+        autocmd FileType vim               call <SID>define_default_vim_mapping()
+        autocmd FileType c,cpp,sh,zsh,fish call <SID>define_default_cpp_mapping()
     augroup END
 endif
 
