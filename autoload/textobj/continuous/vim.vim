@@ -13,8 +13,6 @@ function! s:select(inner)
     execute 'normal!' (a:inner ? 'k$' : '0')
     let end = getpos('.')
 
-    echo end
-
     return ['v', begin, end]
 endfunction
 
