@@ -18,6 +18,11 @@ call textobj#user#plugin('continuous', {
             \      'select-a' : 'av', '*select-a-function*': 'textobj#continuous#cpp#select_a',
             \      'select-i' : 'iv', '*select-i-function*': 'textobj#continuous#cpp#select_i',
             \   },
+            \
+            \ 'python' : {
+            \      'select-a' : 'av', '*select-a-function*': 'textobj#continuous#python#select_a',
+            \      'select-i' : 'iv', '*select-i-function*': 'textobj#continuous#python#select_i',
+            \   },
             \ })
 
 if ! exists('textobj_continuous_line_no_default_mappings')
@@ -35,10 +40,18 @@ if ! exists('textobj_continuous_line_no_default_mappings')
         vmap <buffer>iv <Plug>(textobj-continuous-cpp-i)
     endfunction
 
+    function! s:define_default_python_mapping()
+        omap <buffer>av <Plug>(textobj-continuous-python-a)
+        vmap <buffer>av <Plug>(textobj-continuous-python-a)
+        omap <buffer>iv <Plug>(textobj-continuous-python-i)
+        vmap <buffer>iv <Plug>(textobj-continuous-python-i)
+    endfunction
+
     augroup TextobjContinuousLineDefaultMapping
         autocmd!
         autocmd FileType vim               call <SID>define_default_vim_mapping()
         autocmd FileType c,cpp,sh,zsh,fish call <SID>define_default_cpp_mapping()
+        autocmd FileType python            call <SID>define_default_python_mapping()
     augroup END
 endif
 
